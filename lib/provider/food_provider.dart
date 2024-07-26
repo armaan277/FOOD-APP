@@ -1,11 +1,12 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
-import 'package:maa_api/food.dart';
+import 'package:maa_api/model/food.dart';
 
 class FoodProvider extends ChangeNotifier {
-  List<Food> foods = [];
   
+  List<Food> foods = [];
+
   List<Food> favouriteFood = [];
 
   void getFoods() async {
@@ -23,18 +24,6 @@ class FoodProvider extends ChangeNotifier {
       foods.add(Food.fromMap(mapResponseLists[i]));
     }
 
-    debugPrint('mapResponse : $foods');
-
-    // debugPrint('mapResponse : ${mapResponse['recipes'][0]['image']}');
-    notifyListeners();
-  }
-
-  void favouriteFoods(Food food) {
-    if (favouriteFood.contains(food)) {
-      
-    } else {
-      favouriteFood.add(food);
-    }
     notifyListeners();
   }
 
@@ -43,8 +32,13 @@ class FoodProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void food(int index) {
-    favouriteFood[index].favourite = true;
+  void addHeart(Food food) {
+    favouriteFood.add(food);
+    notifyListeners();
+  }
+
+  void removeHeart(Food food) {
+    favouriteFood.remove(food);
     notifyListeners();
   }
 }

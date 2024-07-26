@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maa_api/food_provider.dart';
+import 'package:maa_api/provider/food_provider.dart';
 import 'package:provider/provider.dart';
 
 class FavouriteFood extends StatelessWidget {
@@ -11,20 +11,20 @@ class FavouriteFood extends StatelessWidget {
     final providerRead = context.read<FoodProvider>();
     return Scaffold(
       appBar: AppBar(
-        title: Text('Favorite Recipes'),
+        title: const Text('Favorite Recipes'),
       ),
       body: ListView.builder(
         itemCount: providerWatch.favouriteFood.length,
         itemBuilder: (context, index) {
+          final product = providerWatch.favouriteFood[index];
           return Card(
             child: ListTile(
-              leading: Image.network(providerWatch.favouriteFood[index].image),
-              title: Text(providerWatch.favouriteFood[index].title),
+              leading: Image.network(product.image),
+              title: Text(product.title),
               trailing: IconButton(
-                icon: Icon(Icons.delete),
+                icon: const Icon(Icons.delete),
                 onPressed: () {
                   providerRead.removeFavouriteFoods(index);
-                  providerRead.food(index);
                 },
               ),
             ),
