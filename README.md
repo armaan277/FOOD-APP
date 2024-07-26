@@ -18,19 +18,28 @@
 
 ![1721991849716](https://github.com/user-attachments/assets/0248966c-5ae3-42f3-9742-c8f2f7da6c70)
 
+<h1>Steps to use this code:</h1>
+
+# FOOD-APP
+
+This is a Flutter project for a food application.
+
+## Simple Setup Steps
+
+1. **Clone the Repository**
+   ```sh
+   git clone https://github.com/armaan277/FOOD-APP.git
+
+2. **Navigate to the Project Directory**
+   ```sh
+   cd FOOD-APP
+
+3. **Get Flutter Dependencies**
+   ```sh
+   flutter pub get
+
+4. **Run the App**
+   ```sh
+   flutter run
 
 
-
-
-
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
