@@ -23,6 +23,7 @@
 # FOOD-APP
 
 This is a Flutter project for a food application.
+Using Provider State Management.
 
 ## Simple Setup Steps
 
